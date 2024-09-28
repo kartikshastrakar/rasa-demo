@@ -1,8 +1,7 @@
 from setuptools import setup, find_packages
-import io
 import os
 
-
+# List of required dependencies
 install_requires = [
     "mailchimp3~=3.0.2",
     "oauth2client~=4.1.2",
@@ -15,37 +14,41 @@ install_requires = [
     "spacy~=2.2.4",
 ]
 
+# Current directory
 here = os.path.abspath(os.path.dirname(__file__))
 
-with io.open(os.path.join(here, "README.md"), encoding="utf-8") as f:
+# Read the long description from README.md
+with open(os.path.join(here, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
+# Setup configuration
 setup(
     name="rasa-demo",
-    classifiers=[
-        "Development Status :: 3 - Alpha",
-        "Intended Audience :: Developers",
-        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-        # supported python versions
-        "Programming Language :: Python",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-    ],
-    packages=find_packages(where="demo"),
-    version="2.0",
-    install_requires=install_requires,
+    version="2.0.0",
     description="Rasa Demo Bot",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Rasa Technologies GmbH",
-    author_email="hi@rasa.com",
-    maintainer="Akela Drissner-Schmid",
-    maintainer_email="akela@rasa.com",
+    author_email="kartikshastrakar04@gmail.com",
+    maintainer="Kartik-Shastrakar",
+    maintainer_email="kartikshastrakar@rasa.com",
     license="GNU General Public License v3.0",
     url="https://github.com/rasahq/rasa-demo",
     download_url="https://github.com/RasaHQ/rasa-demo/archive/main.zip",
+    classifiers=[
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+    ],
+    packages=find_packages(where="demo"),
+    install_requires=install_requires,
     project_urls={
         "Bug Reports": "https://github.com/rasahq/rasa-demo/issues",
-        "Source": "https://github.com/rasahq/rasa-demo",
+        "Source": "https://github.com/RasaHQ/rasa-demo",
     },
+    python_requires='>=3.6',
 )
